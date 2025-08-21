@@ -1,0 +1,4397 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:am="http://schemas.microsoft.com/sqlserver/reporting/authoringmetadata">
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportServerUrl>http://cm1/ReportServer</rd:ReportServerUrl>
+  <rd:ReportID>6fbd236a-d836-4950-8788-14b828deb616</rd:ReportID>
+  <am:AuthoringMetadata>
+    <am:CreatedBy>
+      <am:Name>MSRB</am:Name>
+      <am:Version>15.1.30001.02</am:Version>
+    </am:CreatedBy>
+    <am:UpdatedBy>
+      <am:Name>MSRB</am:Name>
+      <am:Version>15.1.30001.02</am:Version>
+    </am:UpdatedBy>
+    <am:LastModifiedTimestamp>2025-08-21T13:08:16.3980209Z</am:LastModifiedTimestamp>
+  </am:AuthoringMetadata>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="AutoGen__5C6358F2_4BB6_4a1b_A16E_8D96795D8602_">
+      <rd:SecurityType>None</rd:SecurityType>
+      <DataSourceReference>/ConfigMgr_WZ1/{5C6358F2-4BB6-4a1b-A16E-8D96795D8602}</DataSourceReference>
+      <rd:DataSourceID>11111111-1111-1111-1111-111111111111</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSetAdminID">
+      <Query>
+        <DataSourceName>AutoGen__5C6358F2_4BB6_4a1b_A16E_8D96795D8602_</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@UserTokenSIDs">
+            <Value>=Parameters!UserTokenSIDs.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>select dbo.fn_rbac_GetAdminIDsfromUserSIDs(@UserTokenSIDs) as UserSIDs</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="UserSIDs">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>UserSIDs</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="MainDataSet">
+      <Query>
+        <DataSourceName>AutoGen__5C6358F2_4BB6_4a1b_A16E_8D96795D8602_</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@UserSIDs">
+            <Value>=Parameters!UserSIDs.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@OSCaption">
+            <Value>=Parameters!OSCaption.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@PDHealthStatus">
+            <Value>=Parameters!PDHealthStatus.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@CSManufacturer">
+            <Value>=Parameters!CSManufacturer.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@CSModel">
+            <Value>=Parameters!CSModel.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Name">
+            <Value>=Parameters!Name.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@LastLogonUser">
+            <Value>=Parameters!LastLogonUser.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@USSLastScanPackageLocation">
+            <Value>=Parameters!USSLastScanPackageLocation.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@USSLastWUAVersion">
+            <Value>=Parameters!USSLastWUAVersion.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@USSLastScanPackageVersion">
+            <Value>=Parameters!USSLastScanPackageVersion.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@USSScanPackageVersion">
+            <Value>=Parameters!USSScanPackageVersion.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@USSLastStatusMessageID">
+            <Value>=Parameters!USSLastStatusMessageID.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@USSLastScanState">
+            <Value>=Parameters!USSLastScanState.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@USSLastErrorCode">
+            <Value>=Parameters!USSLastErrorCode.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@OSLastBootUpTimeGroup">
+            <Value>=Parameters!OSLastBootUpTimeGroup.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@CDRLastDDRGroup">
+            <Value>=Parameters!CDRLastDDRGroup.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@CDRLastHardwareScanGroup">
+            <Value>=Parameters!CDRLastHardwareScanGroup.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@CDRLastSoftwareScanGroup">
+            <Value>=Parameters!CDRLastSoftwareScanGroup.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@CDRLastStatusMessageGroup">
+            <Value>=Parameters!CDRLastStatusMessageGroup.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@CDRLastActiveTimeGroup">
+            <Value>=Parameters!CDRLastActiveTimeGroup.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@CDRLastClientCheckTimeGroup">
+            <Value>=Parameters!CDRLastClientCheckTimeGroup.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@CDRClientCheckPass">
+            <Value>=Parameters!CDRClientCheckPass.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@CDRCNIsOnInternet">
+            <Value>=Parameters!CDRCNIsOnInternet.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@CHEHealthCheckDescription">
+            <Value>=Parameters!CHEHealthCheckDescription.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@CDRClientVersion">
+            <Value>=Parameters!CDRClientVersion.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@USSScanTimeGroup">
+            <Value>=Parameters!USSScanTimeGroup.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@LDFreeDiskGBGroup">
+            <Value>=Parameters!LDFreeDiskGBGroup.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@USSLastScanTimeGroup">
+            <Value>=Parameters!USSLastScanTimeGroup.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <CommandText>select distinct
+CDR.Name,	--Client name
+CS.Manufacturer0,	--Computer system manufacturer
+CS.Model0,	--Computer system model
+CDR.ClientVersion,	--SCCM client version
+USS.ScanTime,	--Last completed SUP scan time
+USS.LastScanTime,	--Last attempted SUP scan time
+USS.ScanPackageVersion,	--WSUS catalog version for last completed scan
+USS.LastScanPackageVersion,	--WSUS catalog version for last attempted scan
+CASE
+	WHEN USS.LastScanState = '0' then 'Scan state unknown'
+	WHEN USS.LastScanState = '1' then 'Scan is waiting for catalog location'
+	WHEN USS.LastScanState = '2' then 'Scan is running'
+	WHEN USS.LastScanState = '3' then 'Scan completed'
+	WHEN USS.LastScanState = '4' then 'Scan is pending retry'
+	WHEN USS.LastScanState = '5' then 'Scan failed'
+	WHEN USS.LastScanState = '6' then 'Scan completed with errors'
+END AS WSUSLastScanState,	--Description of last SUP scan state
+USS.LastStatusMessageID,	--Status message for last SUP scan, 0 is successful
+USS.LastErrorCode,	--Error code for last SUP scan, 0 is successful
+USS.LastScanPackageLocation,	--Location WSUS package was last retrieved from - the SUP, the CMG, or blank
+USS.LastWUAVersion,	--Windows Update Agent version
+CDR.LastDDR,	--Last DDR or heartbeat inventory processed
+CDR.LastHardwareScan,	--Last hardware inventory processed
+CDR.LastSoftwareScan,	--Last sofwtare (file) inventory processed
+CASE
+	WHEN CDR.CNIsOnInternet = '0' then 'False'
+	WHEN CDR.CNIsOnInternet = '1' then 'True'
+	--ELSE 'Unknown'
+END as CNIsOnInternet,	--Whether client is on the internet
+CDR.LastStatusMessage,	--Last status message processed
+CDR.LastActiveTime,	--Last client activity
+CDR.LastLogonUser,	--Last logon user
+OS.Caption0,	--Operating system full name
+OS.LastBootUpTime0,	--Last boot time, to calculate uptime
+CDR.DeviceOSBuild,	--Operating system build number
+CASE
+	WHEN CDR.ClientCheckPass = '1' then 'Passed'
+	WHEN CDR.ClientCheckPass = '2' then 'Failed'
+	WHEN CDR.ClientCheckPass = '3' then 'No Results'
+	ELSE 'Unknown'
+END as ClientHealthCheckResult,	--Description of client health check/CCMEval status
+CDR.LastClientCheckTime,	--Last CCMEval status time
+CHE.HealthCheckDescription,	--Description of CCMEval results
+LD.FreeSpace0/1024 as FreeDiskGB,	--Free space on C: drive in GB
+CASE
+	WHEN PD.HealthStatus0 = '0' then 'Healthy'
+	WHEN PD.HealthStatus0 = '1' then 'Warning'
+	WHEN PD.HealthStatus0 = '2' then 'Unhealthy'
+	ELSE 'Unknown'
+END as DiskHealth	--Physical disk health status
+from
+fn_rbac_CombinedDeviceResources(@UserSIDs) CDR
+
+--Left join these views to include devices which may not have entries in below tables
+--For example devices may not have harwdare inventory or may not have run a SUP scan
+left join fn_rbac_GS_COMPUTER_SYSTEM(@UserSIDs) CS on CS.ResourceID = CDR.MachineID
+left join fn_rbac_UpdateScanStatus(@UserSIDs) USS on USS.ResourceID = CDR.MachineID
+left join fn_rbac_GS_LOGICAL_DISK(@UserSIDs) LD on LD.ResourceID = CDR.MachineID
+left join fn_rbac_GS_OPERATING_SYSTEM(@UserSIDs) OS on OS.ResourceID = CDR.MachineID
+left join fn_rbac_CH_EvalResults(@UserSIDs) CHE on CHE.ResourceID = CDR.MachineID
+left join fn_rbac_GS_PHYSICAL_DISK(@UserSIDs) PD on PD.ResourceID = CDR.MachineID
+
+--Exclude devices which we expect to have no records such as the built-in unknown computer objects
+where CDR.name not in ('Unknown','x86 Unknown Computer (x86 Unknown Computer)','x64 Unknown Computer (x64 Unknown Computer)','arm64 Unknown Computer (arm64 Unknown Computer)','Provisioning Device (Provisioning Device)')
+
+--Include only C: drive if there's inventory for this
+and (LD.ResourceID is NULL or LD.Caption0 like 'C:')
+--Everywhere we're using a check for '(All)' is so that we can search for this in parameters to include all results
+and (OS.Caption0 = @OSCaption or @OSCaption = '(All)')
+
+--Use "friendly" description for disk health status
+and (CAST(
+CASE
+	WHEN PD.HealthStatus0 = '0' then 'Healthy'
+	WHEN PD.HealthStatus0 = '1' then 'Warning'
+	WHEN PD.HealthStatus0 = '2' then 'Unhealthy'
+	ELSE 'Unknown'
+END AS nvarchar) = @PDHealthStatus or @PDHealthStatus = '(All)')
+
+and (CS.Manufacturer0 = @CSManufacturer or @CSManufacturer = '(All)')
+and (CS.Model0 = @CSModel or @CSModel = '(All)')
+
+--Allow searching for name instead of selecting from dropdown
+and (CDR.Name like ('%' + @Name + '%') or @Name IS NULL)
+
+--Allow searching for name instead of selecting from dropdown
+and (CDR.LastLogonUser like ('%' + @LastLogonUser + '%') or @LastLogonUser IS NULL)
+and (USS.LastScanPackageLocation = @USSLastScanPackageLocation or @USSLastScanPackageLocation = '(All)')
+and (USS.LastWUAVersion = @USSLastWUAVersion or @USSLastWUAVersion = '(All)')
+--Use CONVERT where these columns are not strings to standardise them
+--CONVERT with 121 is a datetime, CONVERT without is from a bit of integer value
+and (CONVERT (varchar, USS.LastScanPackageVersion) = @USSLastScanPackageVersion or @USSLastScanPackageVersion = '(All)')
+--and (CONVERT (varchar, USS.ScanTime, 121) = @USSScanTime or @USSScanTime= '(All)')
+--and (CONVERT (varchar, USS.LastScanTime, 121) = @USSLastScanTime or @USSLastScanTime= '(All)')
+and (CONVERT (varchar, USS.ScanPackageVersion) = @USSScanPackageVersion or @USSScanPackageVersion = '(All)')
+and (CONVERT (varchar, USS.LastStatusMessageID) = @USSLastStatusMessageID or @USSLastStatusMessageID = '(All)')
+--Use "friendly" description for scan state, and cast to string
+and (CAST(
+CASE
+	WHEN USS.LastScanState = '0' then 'Scan state unknown'
+	WHEN USS.LastScanState = '1' then 'Scan is waiting for catalog location'
+	WHEN USS.LastScanState = '2' then 'Scan is running'
+	WHEN USS.LastScanState = '3' then 'Scan completed'
+	WHEN USS.LastScanState = '4' then 'Scan is pending retry'
+	WHEN USS.LastScanState = '5' then 'Scan failed'
+	WHEN USS.LastScanState = '6' then 'Scan completed with errors'
+END AS nvarchar) = @USSLastScanState or @USSLastScanState = '(All)')
+and (CONVERT (varchar, USS.LastErrorCode) = @USSLastErrorCode or @USSLastErrorCode = '(All)')
+--and (CONVERT (varchar, OS.LastBootUpTime0, 121) = @OSLastBootUpTime or @OSLastBootUpTime = '(All)')
+and (CAST(
+CASE 
+	WHEN DATEDIFF(day, OS.LastBootUpTime0, GETDATE()) &lt;= 1 THEN '1 day old'
+	WHEN DATEDIFF(day, OS.LastBootUpTime0, GETDATE()) BETWEEN 2 AND 3 THEN '1–3 days'
+	WHEN DATEDIFF(day, OS.LastBootUpTime0, GETDATE()) BETWEEN 4 AND 7 THEN '3–7 days'
+	WHEN DATEDIFF(day, OS.LastBootUpTime0, GETDATE()) &gt;7 THEN 'Over 7 days'
+END AS nvarchar) = @OSLastBootUpTimeGroup or @OSLastBootUpTimeGroup = '(All)')
+--and (CONVERT (varchar, CDR.LastDDR, 121) = @CDRLastDDR or @CDRLastDDR = '(All)')
+and (CAST(
+CASE 
+	WHEN DATEDIFF(day, CDR.LastDDR, GETDATE()) &lt;= 1 THEN '1 day old'
+	WHEN DATEDIFF(day, CDR.LastDDR, GETDATE()) BETWEEN 2 AND 3 THEN '1–3 days'
+	WHEN DATEDIFF(day, CDR.LastDDR, GETDATE()) BETWEEN 4 AND 7 THEN '3–7 days'
+	WHEN DATEDIFF(day, CDR.LastDDR, GETDATE()) &gt;7 THEN 'Over 7 days'
+END AS nvarchar) = @CDRLastDDRGroup or @CDRLastDDRGroup = '(All)')
+--and (CONVERT (varchar, CDR.LastHardwareScan, 121) = @CDRLastHardwareScan or @CDRLastHardwareScan = '(All)')
+and (CAST(
+CASE 
+	WHEN DATEDIFF(day, CDR.LastHardwareScan, GETDATE()) &lt;= 1 THEN '1 day old'
+	WHEN DATEDIFF(day, CDR.LastHardwareScan, GETDATE()) BETWEEN 2 AND 3 THEN '1–3 days'
+	WHEN DATEDIFF(day, CDR.LastHardwareScan, GETDATE()) BETWEEN 4 AND 7 THEN '3–7 days'
+	WHEN DATEDIFF(day, CDR.LastHardwareScan, GETDATE()) &gt;7 THEN 'Over 7 days'
+END AS nvarchar) = @CDRLastHardwareScanGroup or @CDRLastHardwareScanGroup = '(All)')
+--and (CONVERT (varchar, CDR.LastSoftwareScan, 121) = @CDRLastSoftwareScan or @CDRLastSoftwareScan = '(All)')
+and (CAST(
+CASE 
+	WHEN DATEDIFF(day, CDR.LastSoftwareScan, GETDATE()) &lt;= 1 THEN '1 day old'
+	WHEN DATEDIFF(day, CDR.LastSoftwareScan, GETDATE()) BETWEEN 2 AND 3 THEN '1–3 days'
+	WHEN DATEDIFF(day, CDR.LastSoftwareScan, GETDATE()) BETWEEN 4 AND 7 THEN '3–7 days'
+	WHEN DATEDIFF(day, CDR.LastSoftwareScan, GETDATE()) &gt;7 THEN 'Over 7 days'
+END AS nvarchar) = @CDRLastSoftwareScanGroup or @CDRLastSoftwareScanGroup = '(All)')
+--and (CONVERT (varchar, CDR.LastStatusMessage, 121) = @CDRLastStatusMessage or @CDRLastStatusMessage = '(All)')
+and (CAST(
+CASE 
+	WHEN DATEDIFF(day, CDR.LastStatusMessage, GETDATE()) &lt;= 1 THEN '1 day old'
+	WHEN DATEDIFF(day, CDR.LastStatusMessage, GETDATE()) BETWEEN 2 AND 3 THEN '1–3 days'
+	WHEN DATEDIFF(day, CDR.LastStatusMessage, GETDATE()) BETWEEN 4 AND 7 THEN '3–7 days'
+	WHEN DATEDIFF(day, CDR.LastStatusMessage, GETDATE()) &gt;7 THEN 'Over 7 days'
+END AS nvarchar) = @CDRLastStatusMessageGroup or @CDRLastStatusMessageGroup = '(All)')
+--and (CONVERT (varchar, CDR.LastActiveTime, 121) = @CDRLastActiveTime or @CDRLastActiveTime = '(All)')
+and (CAST(
+CASE 
+	WHEN DATEDIFF(day, CDR.LastActiveTime, GETDATE()) &lt;= 1 THEN '1 day old'
+	WHEN DATEDIFF(day, CDR.LastActiveTime, GETDATE()) BETWEEN 2 AND 3 THEN '1–3 days'
+	WHEN DATEDIFF(day, CDR.LastActiveTime, GETDATE()) BETWEEN 4 AND 7 THEN '3–7 days'
+	WHEN DATEDIFF(day, CDR.LastActiveTime, GETDATE()) &gt;7 THEN 'Over 7 days'
+END AS nvarchar) = @CDRLastActiveTimeGroup or @CDRLastActiveTimeGroup = '(All)')
+--and (CONVERT (varchar, CDR.LastClientCheckTime, 121) = @CDRLastClientCheckTime or @CDRLastClientCheckTime = '(All)')
+and (CAST(
+CASE 
+	WHEN DATEDIFF(day, CDR.LastClientCheckTime, GETDATE()) &lt;= 1 THEN '1 day old'
+	WHEN DATEDIFF(day, CDR.LastClientCheckTime, GETDATE()) BETWEEN 2 AND 3 THEN '1–3 days'
+	WHEN DATEDIFF(day, CDR.LastClientCheckTime, GETDATE()) BETWEEN 4 AND 7 THEN '3–7 days'
+	WHEN DATEDIFF(day, CDR.LastClientCheckTime, GETDATE()) &gt;7 THEN 'Over 7 days'
+END AS nvarchar) = @CDRLastClientCheckTimeGroup or @CDRLastClientCheckTimeGroup = '(All)')
+--Use "friendly" description for client check result, and cast to string
+and (CAST(
+CASE
+	WHEN CDR.ClientCheckPass = '1' then 'Passed'
+	WHEN CDR.ClientCheckPass = '2' then 'Failed'
+	WHEN CDR.ClientCheckPass = '3' then 'No Results'
+	--ELSE 'Unknown'
+END AS nvarchar) = @CDRClientCheckPass or @CDRClientCheckPass = '(All)')
+--Use "friendly" description for whether client is on internet, and cast to string
+and (CAST(
+CASE
+	WHEN CDR.CNIsOnInternet = '0' then 'False'
+	WHEN CDR.CNIsOnInternet = '1' then 'True'
+	--ELSE 'Unknown'
+END AS nvarchar) = @CDRCNIsOnInternet or @CDRCNIsOnInternet = '(All)')
+and (CHE.HealthCheckDescription = @CHEHealthCheckDescription or @CHEHealthCheckDescription = '(All)')
+and (CDR.ClientVersion = @CDRClientVersion or @CDRClientVersion = '(All)')
+--Divide disk free space by 1024 to get space in GB
+--and (CONVERT (varchar, LD.FreeSpace0/1024) = @LDFreeDiskGB or @LDFreeDiskGB = '(All)')
+and (CAST(
+CASE
+	when CONVERT (varchar, LD.FreeSpace0/1024) &lt; 1 THEN 'Less than 1GB'
+	when CONVERT (varchar, LD.FreeSpace0/1024) BETWEEN 1 AND 5 THEN '1-5GB'
+	when CONVERT (varchar, LD.FreeSpace0/1024) BETWEEN 5 AND 10 THEN '5-10GB'
+	when CONVERT (varchar, LD.FreeSpace0/1024) BETWEEN 10 AND 20 THEN '10-20GB'
+	when CONVERT (varchar, LD.FreeSpace0/1024)  &gt;20 THEN 'Over 20GB'
+END AS nvarchar) = @LDFreeDiskGBGroup or @LDFreeDiskGBGroup = '(All)')
+--Group the scan time by how many days old it is compared to today
+and (CAST(
+CASE 
+	WHEN DATEDIFF(day, USS.ScanTime, GETDATE()) &lt;= 1 THEN '1 day old'
+	WHEN DATEDIFF(day, USS.ScanTime, GETDATE()) BETWEEN 2 AND 3 THEN '1–3 days'
+	WHEN DATEDIFF(day, USS.ScanTime, GETDATE()) BETWEEN 4 AND 7 THEN '3–7 days'
+	WHEN DATEDIFF(day, USS.ScanTime, GETDATE()) &gt;7 THEN 'Over 7 days'
+END AS nvarchar) = @USSScanTimeGroup or @USSScanTimeGroup = '(All)')
+and (CAST(
+CASE 
+	WHEN DATEDIFF(day, USS.LastScanTime, GETDATE()) &lt;= 1 THEN '1 day old'
+	WHEN DATEDIFF(day, USS.LastScanTime, GETDATE()) BETWEEN 2 AND 3 THEN '1–3 days'
+	WHEN DATEDIFF(day, USS.LastScanTime, GETDATE()) BETWEEN 4 AND 7 THEN '3–7 days'
+	WHEN DATEDIFF(day, USS.LastScanTime, GETDATE()) &gt;7 THEN 'Over 7 days'
+END AS nvarchar) = @USSLastScanTimeGroup or @USSLastScanTimeGroup = '(All)')
+order by CDR.Name</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Name">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Name</DataField>
+        </Field>
+        <Field Name="Manufacturer0">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Manufacturer0</DataField>
+        </Field>
+        <Field Name="Model0">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Model0</DataField>
+        </Field>
+        <Field Name="ClientVersion">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ClientVersion</DataField>
+        </Field>
+        <Field Name="ScanTime">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>ScanTime</DataField>
+        </Field>
+        <Field Name="LastScanTime">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>LastScanTime</DataField>
+        </Field>
+        <Field Name="ScanPackageVersion">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ScanPackageVersion</DataField>
+        </Field>
+        <Field Name="LastScanPackageVersion">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>LastScanPackageVersion</DataField>
+        </Field>
+        <Field Name="WSUSLastScanState">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>WSUSLastScanState</DataField>
+        </Field>
+        <Field Name="LastStatusMessageID">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>LastStatusMessageID</DataField>
+        </Field>
+        <Field Name="LastErrorCode">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>LastErrorCode</DataField>
+        </Field>
+        <Field Name="LastScanPackageLocation">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>LastScanPackageLocation</DataField>
+        </Field>
+        <Field Name="LastWUAVersion">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>LastWUAVersion</DataField>
+        </Field>
+        <Field Name="LastDDR">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>LastDDR</DataField>
+        </Field>
+        <Field Name="LastHardwareScan">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>LastHardwareScan</DataField>
+        </Field>
+        <Field Name="LastSoftwareScan">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>LastSoftwareScan</DataField>
+        </Field>
+        <Field Name="CNIsOnInternet">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CNIsOnInternet</DataField>
+        </Field>
+        <Field Name="LastStatusMessage">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>LastStatusMessage</DataField>
+        </Field>
+        <Field Name="LastActiveTime">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>LastActiveTime</DataField>
+        </Field>
+        <Field Name="LastLogonUser">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>LastLogonUser</DataField>
+        </Field>
+        <Field Name="Caption0">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Caption0</DataField>
+        </Field>
+        <Field Name="LastBootUpTime0">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>LastBootUpTime0</DataField>
+        </Field>
+        <Field Name="DeviceOSBuild">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>DeviceOSBuild</DataField>
+        </Field>
+        <Field Name="ClientHealthCheckResult">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ClientHealthCheckResult</DataField>
+        </Field>
+        <Field Name="LastClientCheckTime">
+          <rd:TypeName>System.DateTime</rd:TypeName>
+          <DataField>LastClientCheckTime</DataField>
+        </Field>
+        <Field Name="HealthCheckDescription">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>HealthCheckDescription</DataField>
+        </Field>
+        <Field Name="FreeDiskGB">
+          <rd:TypeName>System.Int64</rd:TypeName>
+          <DataField>FreeDiskGB</DataField>
+        </Field>
+        <Field Name="DiskHealth">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>DiskHealth</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="OSDataSet">
+      <Query>
+        <DataSourceName>AutoGen__5C6358F2_4BB6_4a1b_A16E_8D96795D8602_</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@UserSIDs">
+            <Value>=Parameters!UserSIDs.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>select distinct
+COALESCE(OS.Caption0,'(All)') as OSCaption,
+COALESCE((
+CASE 
+	WHEN DATEDIFF(day, OS.LastBootUpTime0, GETDATE()) &lt;= 1 THEN '1 day old'
+	WHEN DATEDIFF(day, OS.LastBootUpTime0, GETDATE()) BETWEEN 2 AND 3 THEN '1–3 days'
+	WHEN DATEDIFF(day, OS.LastBootUpTime0, GETDATE()) BETWEEN 4 AND 7 THEN '3–7 days'
+	WHEN DATEDIFF(day, OS.LastBootUpTime0, GETDATE()) &gt;7 THEN 'Over 7 days'
+END),'(All)') AS OSLastBootUpTimeGroup
+from fn_rbac_GS_OPERATING_SYSTEM(@UserSIDs) OS
+--UNION to bring in null values which are changed to (All) for filtering in parameters
+UNION select ISNULL(NULL,'(All)'),
+ISNULL(NULL,'(All)') 
+order by 1</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="OSCaption">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>OSCaption</DataField>
+        </Field>
+        <Field Name="OSLastBootUpTimeGroup">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>OSLastBootUpTimeGroup</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="PDDataSet">
+      <Query>
+        <DataSourceName>AutoGen__5C6358F2_4BB6_4a1b_A16E_8D96795D8602_</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@UserSIDs">
+            <Value>=Parameters!UserSIDs.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>select distinct
+COALESCE((
+CASE
+	WHEN PD.HealthStatus0 = '0' then 'Healthy'
+	WHEN PD.HealthStatus0 = '1' then 'Warning'
+	WHEN PD.HealthStatus0 = '2' then 'Unhealthy'
+	ELSE 'Unknown'
+END),'(All)') AS PDHealthStatus
+from fn_rbac_GS_PHYSICAL_DISK(@UserSIDs) PD
+--UNION to bring in null values which are changed to (All) for filtering in parameters
+UNION select ISNULL(NULL,'(All)') 
+order by 1</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="PDHealthStatus">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>PDHealthStatus</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="CSDataSet">
+      <Query>
+        <DataSourceName>AutoGen__5C6358F2_4BB6_4a1b_A16E_8D96795D8602_</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@UserSIDs">
+            <Value>=Parameters!UserSIDs.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>select distinct
+COALESCE(CS.Manufacturer0,'(All)') as CSManufacturer,
+COALESCE(CS.Model0,'(All)') as CSModel
+from fn_rbac_GS_COMPUTER_SYSTEM(@UserSIDs) CS
+--UNION to bring in null values which are changed to (All) for filtering in parameters
+UNION select ISNULL(NULL,'(All)') ,
+ISNULL(NULL,'(All)') 
+order by 1</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="CSManufacturer">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CSManufacturer</DataField>
+        </Field>
+        <Field Name="CSModel">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CSModel</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="CDRDataSet">
+      <Query>
+        <DataSourceName>AutoGen__5C6358F2_4BB6_4a1b_A16E_8D96795D8602_</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@UserSIDs">
+            <rd:UserDefined>true</rd:UserDefined>
+            <Value>=Parameters!UserSIDs.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>select distinct
+COALESCE(CDR.ClientVersion,'(All)') as CDRClientVersion,
+--COALESCE to (All) and convert timestamp to string for standardisation
+--COALESCE(CONVERT(varchar, CDR.LastDDR, 121), '(All)') AS CDRLastDDR,
+COALESCE((
+CASE 
+	WHEN DATEDIFF(day, CDR.LastHardwareScan, GETDATE()) &lt;= 1 THEN '1 day old'
+	WHEN DATEDIFF(day, CDR.LastHardwareScan, GETDATE()) BETWEEN 2 AND 3 THEN '1–3 days'
+	WHEN DATEDIFF(day, CDR.LastHardwareScan, GETDATE()) BETWEEN 4 AND 7 THEN '3–7 days'
+	WHEN DATEDIFF(day, CDR.LastHardwareScan, GETDATE()) &gt;7 THEN 'Over 7 days'
+END),'(All)') AS CDRLastDDRGroup,
+--COALESCE(CONVERT (varchar, CDR.LastHardwareScan, 121), '(All)') as CDRLastHardwareScan,
+COALESCE((
+CASE 
+	WHEN DATEDIFF(day, CDR.LastHardwareScan, GETDATE()) &lt;= 1 THEN '1 day old'
+	WHEN DATEDIFF(day, CDR.LastHardwareScan, GETDATE()) BETWEEN 2 AND 3 THEN '1–3 days'
+	WHEN DATEDIFF(day, CDR.LastHardwareScan, GETDATE()) BETWEEN 4 AND 7 THEN '3–7 days'
+	WHEN DATEDIFF(day, CDR.LastHardwareScan, GETDATE()) &gt;7 THEN 'Over 7 days'
+END),'(All)') AS CDRLastHardwareScanGroup,
+--COALESCE(CONVERT (varchar, CDR.LastSoftwareScan, 121), '(All)') as CDRLastSoftwareScan,
+COALESCE((
+CASE 
+	WHEN DATEDIFF(day, CDR.LastSoftwareScan, GETDATE()) &lt;= 1 THEN '1 day old'
+	WHEN DATEDIFF(day, CDR.LastSoftwareScan, GETDATE()) BETWEEN 2 AND 3 THEN '1–3 days'
+	WHEN DATEDIFF(day, CDR.LastSoftwareScan, GETDATE()) BETWEEN 4 AND 7 THEN '3–7 days'
+	WHEN DATEDIFF(day, CDR.LastSoftwareScan, GETDATE()) &gt;7 THEN 'Over 7 days'
+END),'(All)') AS CDRLastSoftwareScanGroup,
+--COALESCE(CONVERT (varchar, CDR.LastStatusMessage, 121), '(All)') as CDRLastStatusMessage,
+COALESCE((
+CASE 
+	WHEN DATEDIFF(day, CDR.LastStatusMessage, GETDATE()) &lt;= 1 THEN '1 day old'
+	WHEN DATEDIFF(day, CDR.LastStatusMessage, GETDATE()) BETWEEN 2 AND 3 THEN '1–3 days'
+	WHEN DATEDIFF(day, CDR.LastStatusMessage, GETDATE()) BETWEEN 4 AND 7 THEN '3–7 days'
+	WHEN DATEDIFF(day, CDR.LastStatusMessage, GETDATE()) &gt;7 THEN 'Over 7 days'
+END),'(All)') AS CDRLastStatusMessageGroup,
+--COALESCE(CONVERT (varchar, CDR.LastActiveTime, 121), '(All)') as CDRLastActiveTime,
+COALESCE((
+CASE 
+	WHEN DATEDIFF(day, CDR.LastActiveTime, GETDATE()) &lt;= 1 THEN '1 day old'
+	WHEN DATEDIFF(day, CDR.LastActiveTime, GETDATE()) BETWEEN 2 AND 3 THEN '1–3 days'
+	WHEN DATEDIFF(day, CDR.LastActiveTime, GETDATE()) BETWEEN 4 AND 7 THEN '3–7 days'
+	WHEN DATEDIFF(day, CDR.LastActiveTime, GETDATE()) &gt;7 THEN 'Over 7 days'
+END),'(All)') AS CDRLastActiveTimeGroup,
+--COALESCE(CONVERT (varchar, CDR.LastClientCheckTime, 121), '(All)') as CDRLastClientCheckTime,
+COALESCE((
+CASE 
+	WHEN DATEDIFF(day, CDR.LastClientCheckTime, GETDATE()) &lt;= 1 THEN '1 day old'
+	WHEN DATEDIFF(day, CDR.LastClientCheckTime, GETDATE()) BETWEEN 2 AND 3 THEN '1–3 days'
+	WHEN DATEDIFF(day, CDR.LastClientCheckTime, GETDATE()) BETWEEN 4 AND 7 THEN '3–7 days'
+	WHEN DATEDIFF(day, CDR.LastClientCheckTime, GETDATE()) &gt;7 THEN 'Over 7 days'
+END),'(All)') AS CDRLastClientCheckTimeGroup,
+COALESCE( CASE
+	WHEN CDR.ClientCheckPass = '1' then 'Passed'
+	WHEN CDR.ClientCheckPass = '2' then 'Failed'
+	WHEN CDR.ClientCheckPass = '3' then 'No Results'
+	--ELSE 'Unknown'
+END, '(All)') as CDRClientCheckPass,
+COALESCE( CASE
+	WHEN CDR.CNIsOnInternet = '0' then 'False'
+	WHEN CDR.CNIsOnInternet = '1' then 'True'
+	--ELSE 'Unknown'
+END, '(All)') as CDRCNIsOnInternet
+from fn_rbac_CombinedDeviceResources(@UserSIDs) CDR
+--UNION to bring in null values which are changed to (All) for filtering in parameters
+UNION select ISNULL(NULL,'(All)'),
+ISNULL(NULL,'(All)'),
+ISNULL(NULL,'(All)'),
+ISNULL(NULL,'(All)'),
+ISNULL(NULL,'(All)'),
+ISNULL(NULL,'(All)'),
+ISNULL(NULL,'(All)'),
+ISNULL(NULL,'(All)'),
+ISNULL(NULL,'(All)')
+order by 1</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="CDRClientVersion">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CDRClientVersion</DataField>
+        </Field>
+        <Field Name="CDRLastDDRGroup">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CDRLastDDRGroup</DataField>
+        </Field>
+        <Field Name="CDRLastHardwareScanGroup">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CDRLastHardwareScanGroup</DataField>
+        </Field>
+        <Field Name="CDRLastSoftwareScanGroup">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CDRLastSoftwareScanGroup</DataField>
+        </Field>
+        <Field Name="CDRLastStatusMessageGroup">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CDRLastStatusMessageGroup</DataField>
+        </Field>
+        <Field Name="CDRLastActiveTimeGroup">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CDRLastActiveTimeGroup</DataField>
+        </Field>
+        <Field Name="CDRLastClientCheckTimeGroup">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CDRLastClientCheckTimeGroup</DataField>
+        </Field>
+        <Field Name="CDRClientCheckPass">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CDRClientCheckPass</DataField>
+        </Field>
+        <Field Name="CDRCNIsOnInternet">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CDRCNIsOnInternet</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="LDDataSet">
+      <Query>
+        <DataSourceName>AutoGen__5C6358F2_4BB6_4a1b_A16E_8D96795D8602_</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@UserSIDs">
+            <Value>=Parameters!UserSIDs.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>select 
+--CONVERT (varchar, LD.FreeSpace0/1024) as LDFreeDiskGB,
+COALESCE((
+CASE
+	when CONVERT (varchar, LD.FreeSpace0/1024) &lt; 1 THEN 'Less than 1GB'
+	when CONVERT (varchar, LD.FreeSpace0/1024) BETWEEN 1 AND 5 THEN '1-5GB'
+	when CONVERT (varchar, LD.FreeSpace0/1024) BETWEEN 5 AND 10 THEN '5-10GB'
+	when CONVERT (varchar, LD.FreeSpace0/1024) BETWEEN 10 AND 20 THEN '10-20GB'
+	when CONVERT (varchar, LD.FreeSpace0/1024)  &gt;20 THEN 'Over 20GB'
+END),'(All)') AS LDFreeDiskGBGroup
+from fn_rbac_GS_LOGICAL_DISK(@UserSIDs) LD
+where (LD.ResourceID is NULL or LD.Caption0 like 'C:')
+--UNION to bring in null values which are changed to (All) for filtering in parameters
+UNION select ISNULL(NULL,'(All)')
+order by 1</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="LDFreeDiskGBGroup">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>LDFreeDiskGBGroup</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="USSDataSet">
+      <Query>
+        <DataSourceName>AutoGen__5C6358F2_4BB6_4a1b_A16E_8D96795D8602_</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@UserSIDs">
+            <Value>=Parameters!UserSIDs.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>select distinct
+COALESCE(USS.LastScanPackageLocation,'(All)') as USSLastScanPackageLocation,
+COALESCE(USS.LastWUAVersion,'(All)') as USSLastWUAVersion,
+COALESCE(CONVERT (varchar, USS.LastScanPackageVersion),'(All)') as USSLastScanPackageVersion,
+--CONVERT (varchar, USS.ScanTime, 121) as USSScanTime,
+COALESCE((
+CASE 
+	WHEN DATEDIFF(day, USS.ScanTime, GETDATE()) &lt;= 1 THEN '1 day old'
+	WHEN DATEDIFF(day, USS.ScanTime, GETDATE()) BETWEEN 2 AND 3 THEN '1–3 days'
+	WHEN DATEDIFF(day, USS.ScanTime, GETDATE()) BETWEEN 4 AND 7 THEN '3–7 days'
+	WHEN DATEDIFF(day, USS.ScanTime, GETDATE()) &gt;7 THEN 'Over 7 days'
+END),'(All)') AS USSScanTimeGroup,
+--CONVERT (varchar, USS.LastScanTime, 121) as USSLastScanTime,
+COALESCE((
+CASE 
+	WHEN DATEDIFF(day, USS.LastScanTime, GETDATE()) &lt;= 1 THEN '1 day old'
+	WHEN DATEDIFF(day, USS.LastScanTime, GETDATE()) BETWEEN 2 AND 3 THEN '1–3 days'
+	WHEN DATEDIFF(day, USS.LastScanTime, GETDATE()) BETWEEN 4 AND 7 THEN '3–7 days'
+	WHEN DATEDIFF(day, USS.LastScanTime, GETDATE()) &gt;7 THEN 'Over 7 days'
+END),'(All)') AS USSLastScanTimeGroup,
+COALESCE(CONVERT (varchar, USS.ScanPackageVersion),'(All)') as USSScanPackageVersion,
+COALESCE(CONVERT (varchar, USS.LastStatusMessageID),'(All)') as USSLastStatusMessageID,
+COALESCE(CONVERT (varchar, USS.LastErrorCode),'(All)') as USSLastErrorCode,
+COALESCE((
+CASE
+	WHEN USS.LastScanState = '0' then 'Scan state unknown'
+	WHEN USS.LastScanState = '1' then 'Scan is waiting for catalog location'
+	WHEN USS.LastScanState = '2' then 'Scan is running'
+	WHEN USS.LastScanState = '3' then 'Scan completed'
+	WHEN USS.LastScanState = '4' then 'Scan is pending retry'
+	WHEN USS.LastScanState = '5' then 'Scan failed'
+	WHEN USS.LastScanState = '6' then 'Scan completed with errors'
+END),'(All)') AS USSLastScanState
+from fn_rbac_UpdateScanStatus(@UserSIDs) USS
+--UNION to bring in null values which are changed to (All) for filtering in parameters
+UNION ALL SELECT ISNULL(NULL,'(All)'),
+ISNULL(NULL,'(All)'),
+ISNULL(NULL,'(All)'),
+ISNULL(NULL,'(All)'),
+ISNULL(NULL,'(All)'),
+ISNULL(NULL,'(All)'),
+ISNULL(NULL,'(All)'),
+ISNULL(NULL,'(All)'),
+ISNULL(NULL,'(All)')
+order by 1</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="USSLastScanPackageLocation">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>USSLastScanPackageLocation</DataField>
+        </Field>
+        <Field Name="USSLastWUAVersion">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>USSLastWUAVersion</DataField>
+        </Field>
+        <Field Name="USSLastScanPackageVersion">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>USSLastScanPackageVersion</DataField>
+        </Field>
+        <Field Name="USSScanTimeGroup">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>USSScanTimeGroup</DataField>
+        </Field>
+        <Field Name="USSLastScanTimeGroup">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>USSLastScanTimeGroup</DataField>
+        </Field>
+        <Field Name="USSScanPackageVersion">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>USSScanPackageVersion</DataField>
+        </Field>
+        <Field Name="USSLastStatusMessageID">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>USSLastStatusMessageID</DataField>
+        </Field>
+        <Field Name="USSLastErrorCode">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>USSLastErrorCode</DataField>
+        </Field>
+        <Field Name="USSLastScanState">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>USSLastScanState</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="CHEDataSet">
+      <Query>
+        <DataSourceName>AutoGen__5C6358F2_4BB6_4a1b_A16E_8D96795D8602_</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@UserSIDs">
+            <Value>=Parameters!UserSIDs.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>select distinct
+COALESCE(CHE.HealthCheckDescription,'(All)') as CHEHealthCheckDescription
+from fn_rbac_CH_EvalResults(@UserSIDs) CHE
+--UNION to bring in null values which are changed to (All) for filtering in parameters
+UNION select ISNULL(NULL,'(All)')
+order by 1</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="CHEHealthCheckDescription">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>CHEHealthCheckDescription</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Tablix Name="Tablix1">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>1.16667in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.09722in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.65278in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.01389in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.74306in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.55556in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.97917in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>3.00694in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.86111in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.36111in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.97222in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.30556in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.78472in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.47222in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.96528in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.84028in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.02778in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.81944in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.64583in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.47917in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.72917in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.52083in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.51389in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.55556in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.5625in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>2.58333in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.66667in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.68056in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.25in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox2">
+                          <rd:DefaultName>Textbox2</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!Name.Value</SortExpression>
+                          </UserSort>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Client Name</Value>
+                                  <Style>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#666666</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox3">
+                          <rd:DefaultName>Textbox3</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!Manufacturer0.Value</SortExpression>
+                          </UserSort>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Computer Manufacturer</Value>
+                                  <Style>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#666666</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <ToolTip>Manufacturer of the device</ToolTip>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox5">
+                          <rd:DefaultName>Textbox5</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!Model0.Value</SortExpression>
+                          </UserSort>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Computer Model</Value>
+                                  <Style>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#666666</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox7">
+                          <rd:DefaultName>Textbox7</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!ClientVersion.Value</SortExpression>
+                          </UserSort>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>SCCM Client Version</Value>
+                                  <Style>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#666666</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox11">
+                          <rd:DefaultName>Textbox11</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!ScanTime.Value</SortExpression>
+                          </UserSort>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Last Completed SUP Scan Time</Value>
+                                  <Style>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#666666</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox13">
+                          <rd:DefaultName>Textbox13</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!LastScanTime.Value</SortExpression>
+                          </UserSort>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Last Attempted SUP Scan Time</Value>
+                                  <Style>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#666666</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox15">
+                          <rd:DefaultName>Textbox15</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!ScanPackageVersion.Value</SortExpression>
+                          </UserSort>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Last Completed SUP Catalog Version</Value>
+                                  <Style>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#666666</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox17">
+                          <rd:DefaultName>Textbox17</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!LastScanPackageVersion.Value</SortExpression>
+                          </UserSort>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Last Attempted SUP Catalog Version</Value>
+                                  <Style>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#666666</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox23">
+                          <rd:DefaultName>Textbox23</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!WSUSLastScanState.Value</SortExpression>
+                          </UserSort>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Last SUP Scan State</Value>
+                                  <Style>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#666666</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox25">
+                          <rd:DefaultName>Textbox25</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!LastStatusMessageID.Value</SortExpression>
+                          </UserSort>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Last SUP Status Message ID</Value>
+                                  <Style>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#666666</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox27">
+                          <rd:DefaultName>Textbox27</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!LastErrorCode.Value</SortExpression>
+                          </UserSort>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Last SUP Error Code</Value>
+                                  <Style>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#666666</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox29">
+                          <rd:DefaultName>Textbox29</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!LastScanPackageLocation.Value</SortExpression>
+                          </UserSort>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Last Update Scan Location</Value>
+                                  <Style>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#666666</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox31">
+                          <rd:DefaultName>Textbox31</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!LastWUAVersion.Value</SortExpression>
+                          </UserSort>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Windows Update Agent Version</Value>
+                                  <Style>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#666666</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox33">
+                          <rd:DefaultName>Textbox33</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!LastDDR.Value</SortExpression>
+                          </UserSort>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Last Heartbeat</Value>
+                                  <Style>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#666666</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox35">
+                          <rd:DefaultName>Textbox35</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!LastHardwareScan.Value</SortExpression>
+                          </UserSort>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Last Hardware Scan</Value>
+                                  <Style>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#666666</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox37">
+                          <rd:DefaultName>Textbox37</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!LastSoftwareScan.Value</SortExpression>
+                          </UserSort>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Last Software Scan</Value>
+                                  <Style>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#666666</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox1">
+                          <rd:DefaultName>Textbox1</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!CNIsOnInternet.Value</SortExpression>
+                          </UserSort>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Is Client On Internet?</Value>
+                                  <Style>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#666666</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox39">
+                          <rd:DefaultName>Textbox39</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!LastStatusMessage.Value</SortExpression>
+                          </UserSort>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Last Status Message</Value>
+                                  <Style>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#666666</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox41">
+                          <rd:DefaultName>Textbox41</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!LastActiveTime.Value</SortExpression>
+                          </UserSort>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Last Active Time</Value>
+                                  <Style>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#666666</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox47">
+                          <rd:DefaultName>Textbox47</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!LastLogonUser.Value</SortExpression>
+                          </UserSort>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Last Logon User</Value>
+                                  <Style>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#666666</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox49">
+                          <rd:DefaultName>Textbox49</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!Caption0.Value</SortExpression>
+                          </UserSort>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Operating System</Value>
+                                  <Style>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#666666</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox51">
+                          <rd:DefaultName>Textbox51</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!LastBootUpTime0.Value</SortExpression>
+                          </UserSort>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Last Boot Time</Value>
+                                  <Style>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#666666</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox53">
+                          <rd:DefaultName>Textbox53</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!DeviceOSBuild.Value</SortExpression>
+                          </UserSort>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Device OS Build</Value>
+                                  <Style>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#666666</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox55">
+                          <rd:DefaultName>Textbox55</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!ClientHealthCheckResult.Value</SortExpression>
+                          </UserSort>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Last Client Health Check Result</Value>
+                                  <Style>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#666666</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox57">
+                          <rd:DefaultName>Textbox57</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!LastClientCheckTime.Value</SortExpression>
+                          </UserSort>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Last Client Health Check Time</Value>
+                                  <Style>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#666666</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox59">
+                          <rd:DefaultName>Textbox59</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!HealthCheckDescription.Value</SortExpression>
+                          </UserSort>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Client Health Check Description</Value>
+                                  <Style>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#666666</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox61">
+                          <rd:DefaultName>Textbox61</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!FreeDiskGB.Value</SortExpression>
+                          </UserSort>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>C: Free Disk (GB)</Value>
+                                  <Style>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#666666</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                              <Width>1pt</Width>
+                            </BottomBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox63">
+                          <rd:DefaultName>Textbox63</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <UserSort>
+                            <SortExpression>=Fields!DiskHealth.Value</SortExpression>
+                          </UserSort>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Disk Health Status</Value>
+                                  <Style>
+                                    <FontSize>11pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#666666</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BottomBorder>
+                              <Color>LightGrey</Color>
+                            </BottomBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.25in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Name">
+                          <rd:DefaultName>Name</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Name.Value</Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2 = 0, "LIGHTGREY", "SILVER")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Manufacturer0">
+                          <rd:DefaultName>Manufacturer0</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(IsNothing(Fields!Manufacturer0.Value),"Unknown",Fields!Manufacturer0.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2 = 0, "LIGHTGREY", "SILVER")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Model0">
+                          <rd:DefaultName>Model0</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(IsNothing(Fields!Model0.Value),"Unknown",Fields!Model0.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2 = 0, "LIGHTGREY", "SILVER")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ClientVersion">
+                          <rd:DefaultName>ClientVersion</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(IsNothing(Fields!ClientVersion.Value),"Unknown",Fields!ClientVersion.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2 = 0, "LIGHTGREY", "SILVER")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ScanTime">
+                          <rd:DefaultName>ScanTime</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(IsNothing(Fields!ScanTime.Value),"Unknown",Fields!ScanTime.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2 = 0, "LIGHTGREY", "SILVER")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="LastScanTime">
+                          <rd:DefaultName>LastScanTime</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(IsNothing(Fields!LastScanTime.Value),"Unknown",Fields!LastScanTime.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2 = 0, "LIGHTGREY", "SILVER")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ScanPackageVersion">
+                          <rd:DefaultName>ScanPackageVersion</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(IsNothing(Fields!ScanPackageVersion.Value),"Unknown",Fields!ScanPackageVersion.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2 = 0, "LIGHTGREY", "SILVER")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="LastScanPackageVersion">
+                          <rd:DefaultName>LastScanPackageVersion</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(IsNothing(Fields!LastScanPackageVersion.Value),"Unknown",Fields!LastScanPackageVersion.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2 = 0, "LIGHTGREY", "SILVER")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="WSUSLastSanState">
+                          <rd:DefaultName>WSUSLastSanState</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(IsNothing(Fields!WSUSLastScanState.Value),"Unknown",Fields!WSUSLastScanState.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2 = 0, "LIGHTGREY", "SILVER")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="LastStatusMessageID">
+                          <rd:DefaultName>LastStatusMessageID</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(IsNothing(Fields!LastStatusMessageID.Value),"Unknown",Fields!LastStatusMessageID.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2 = 0, "LIGHTGREY", "SILVER")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="LastErrorCode">
+                          <rd:DefaultName>LastErrorCode</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(IsNothing(Fields!LastErrorCode.Value),"Unknown",Fields!LastErrorCode.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2 = 0, "LIGHTGREY", "SILVER")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="LastScanPackageLocation">
+                          <rd:DefaultName>LastScanPackageLocation</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(IsNothing(Fields!LastScanPackageLocation.Value),"Unknown",Fields!LastScanPackageLocation.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2 = 0, "LIGHTGREY", "SILVER")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="LastWUAVersion">
+                          <rd:DefaultName>LastWUAVersion</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(IsNothing(Fields!LastWUAVersion.Value),"Unknown",Fields!LastWUAVersion.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2 = 0, "LIGHTGREY", "SILVER")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="LastDDR">
+                          <rd:DefaultName>LastDDR</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(IsNothing(Fields!LastDDR.Value),"Unknown",Fields!LastDDR.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2 = 0, "LIGHTGREY", "SILVER")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="LastHardwareScan">
+                          <rd:DefaultName>LastHardwareScan</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(IsNothing(Fields!LastHardwareScan.Value),"Unknown",Fields!LastHardwareScan.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2 = 0, "LIGHTGREY", "SILVER")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="LastSoftwareScan">
+                          <rd:DefaultName>LastSoftwareScan</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(IsNothing(Fields!LastSoftwareScan.Value),"Unknown",Fields!LastSoftwareScan.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2 = 0, "LIGHTGREY", "SILVER")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox4">
+                          <rd:DefaultName>Textbox4</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(IsNothing(Fields!CNIsOnInternet.Value),"Unknown",Fields!CNIsOnInternet.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2 = 0, "LIGHTGREY", "SILVER")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="LastStatusMessage">
+                          <rd:DefaultName>LastStatusMessage</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(IsNothing(Fields!LastStatusMessage.Value),"Unknown",Fields!LastStatusMessage.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2 = 0, "LIGHTGREY", "SILVER")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="LastActiveTime">
+                          <rd:DefaultName>LastActiveTime</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(IsNothing(Fields!LastActiveTime.Value),"Unknown",Fields!LastActiveTime.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2 = 0, "LIGHTGREY", "SILVER")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="LastLogonUser">
+                          <rd:DefaultName>LastLogonUser</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(IsNothing(Fields!LastLogonUser.Value),"Unknown",Fields!LastLogonUser.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2 = 0, "LIGHTGREY", "SILVER")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Caption0">
+                          <rd:DefaultName>Caption0</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(IsNothing(Fields!Caption0.Value),"Unknown",Fields!Caption0.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2 = 0, "LIGHTGREY", "SILVER")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="LastBootUpTime0">
+                          <rd:DefaultName>LastBootUpTime0</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(IsNothing(Fields!LastBootUpTime0.Value),"Unknown",Fields!LastBootUpTime0.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2 = 0, "LIGHTGREY", "SILVER")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="DeviceOSBuild">
+                          <rd:DefaultName>DeviceOSBuild</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(IsNothing(Fields!DeviceOSBuild.Value),"Unknown",Fields!DeviceOSBuild.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2 = 0, "LIGHTGREY", "SILVER")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="ClientHealthCheckResult">
+                          <rd:DefaultName>ClientHealthCheckResult</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(IsNothing(Fields!ClientHealthCheckResult.Value),"Unknown",Fields!ClientHealthCheckResult.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2 = 0, "LIGHTGREY", "SILVER")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="LastClientCheckTime">
+                          <rd:DefaultName>LastClientCheckTime</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(IsNothing(Fields!LastClientCheckTime.Value),"Unknown",Fields!LastClientCheckTime.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2 = 0, "LIGHTGREY", "SILVER")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="HealthCheckDescription">
+                          <rd:DefaultName>HealthCheckDescription</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(IsNothing(Fields!HealthCheckDescription.Value),"Unknown",Fields!HealthCheckDescription.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2 = 0, "LIGHTGREY", "SILVER")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="FreeDiskGB">
+                          <rd:DefaultName>FreeDiskGB</rd:DefaultName>
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(IsNothing(Fields!FreeDiskGB.Value),"Unknown",Fields!FreeDiskGB.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2 = 0, "LIGHTGREY", "SILVER")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="DiskHealth">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=IIF(IsNothing(Fields!DiskHealth.Value),"Unknown",Fields!DiskHealth.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>=IIF(ROWNUMBER(NOTHING) MOD 2 = 0, "LIGHTGREY", "SILVER")</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <KeepWithGroup>After</KeepWithGroup>
+                </TablixMember>
+                <TablixMember>
+                  <Group Name="Details" />
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>MainDataSet</DataSetName>
+            <Top>0.6in</Top>
+            <Left>0in</Left>
+            <Height>0.5in</Height>
+            <Width>57.56252in</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+        </ReportItems>
+        <Height>3.5in</Height>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Body>
+      <Width>63.01389in</Width>
+      <Page>
+        <PageFooter>
+          <Height>0.45in</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
+        <LeftMargin>1in</LeftMargin>
+        <RightMargin>1in</RightMargin>
+        <TopMargin>1in</TopMargin>
+        <BottomMargin>1in</BottomMargin>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="UserTokenSIDs">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=SrsResources.UserIdentity.GetUserSIDs(User!UserID)</Value>
+        </Values>
+      </DefaultValue>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="UserSIDs">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>DataSetAdminID</DataSetName>
+          <ValueField>UserSIDs</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="Name">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" />
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Client Name</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="LastLogonUser">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true" />
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Last Logon User</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="OSCaptionDummy">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>OSDataSet</DataSetName>
+          <ValueField>OSCaption</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>OSCaptionDummy</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>OSDataSet</DataSetName>
+          <ValueField>OSCaption</ValueField>
+          <LabelField>OSCaption</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="OSCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>(All)</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Operating System</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>=Code.RemoveDuplicates(Parameters!OSCaptionDummy)</Value>
+            <Label>=Code.RemoveDuplicates(Parameters!OSCaptionDummy)</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="CSManufacturerDummy">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>CSDataSet</DataSetName>
+          <ValueField>CSManufacturer</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>CSManufacturerDummy</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>CSDataSet</DataSetName>
+          <ValueField>CSManufacturer</ValueField>
+          <LabelField>CSManufacturer</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="CSManufacturer">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>(All)</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Computer Manufacturer</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>=Code.RemoveDuplicates(Parameters!CSManufacturerDummy)</Value>
+            <Label>=Code.RemoveDuplicates(Parameters!CSManufacturerDummy)</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="CSModelDummy">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>CSDataSet</DataSetName>
+          <ValueField>CSModel</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>CSModelDummy</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>CSDataSet</DataSetName>
+          <ValueField>CSModel</ValueField>
+          <LabelField>CSModel</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="CSModel">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>(All)</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Computer Model</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>=Code.RemoveDuplicates(Parameters!CSModelDummy)</Value>
+            <Label>=Code.RemoveDuplicates(Parameters!CSModelDummy)</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="PDHealthStatusDummy">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>PDDataSet</DataSetName>
+          <ValueField>PDHealthStatus</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>PDHealthStatusDummy</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>PDDataSet</DataSetName>
+          <ValueField>PDHealthStatus</ValueField>
+          <LabelField>PDHealthStatus</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="PDHealthStatus">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>(All)</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Disk Health Status</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>=Code.RemoveDuplicates(Parameters!PDHealthStatusDummy)</Value>
+            <Label>=Code.RemoveDuplicates(Parameters!PDHealthStatusDummy)</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="CDRClientVersionDummy">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>CDRDataSet</DataSetName>
+          <ValueField>CDRClientVersion</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>CDRClientVersionDummy</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>CDRDataSet</DataSetName>
+          <ValueField>CDRClientVersion</ValueField>
+          <LabelField>CDRClientVersion</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="CDRClientVersion">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>(All)</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>SCCM Client Version</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>=Code.RemoveDuplicates(Parameters!CDRClientVersionDummy)</Value>
+            <Label>=Code.RemoveDuplicates(Parameters!CDRClientVersionDummy)</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="CDRLastDDRGroupDummy">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>CDRDataSet</DataSetName>
+          <ValueField>CDRLastDDRGroup</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>CDRLastDDRGroupDummy</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>CDRDataSet</DataSetName>
+          <ValueField>CDRLastDDRGroup</ValueField>
+          <LabelField>CDRLastDDRGroup</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="CDRLastDDRGroup">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>(All)</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Last Heartbeat</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>=Code.RemoveDuplicates(Parameters!CDRLastDDRGroupDummy)</Value>
+            <Label>=Code.RemoveDuplicates(Parameters!CDRLastDDRGroupDummy)</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="CDRLastHardwareScanGroupDummy">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>CDRDataSet</DataSetName>
+          <ValueField>CDRLastHardwareScanGroup</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>CDRLastHardwareScanGroupDummy</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>CDRDataSet</DataSetName>
+          <ValueField>CDRLastHardwareScanGroup</ValueField>
+          <LabelField>CDRLastHardwareScanGroup</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="CDRLastHardwareScanGroup">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>(All)</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Last Hardware Scan</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>=Code.RemoveDuplicates(Parameters!CDRLastHardwareScanGroupDummy)</Value>
+            <Label>=Code.RemoveDuplicates(Parameters!CDRLastHardwareScanGroupDummy)</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="CDRLastSoftwareScanGroupDummy">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>CDRDataSet</DataSetName>
+          <ValueField>CDRLastSoftwareScanGroup</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>CDRLastSoftwareScanGroupDummy</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>CDRDataSet</DataSetName>
+          <ValueField>CDRLastSoftwareScanGroup</ValueField>
+          <LabelField>CDRLastSoftwareScanGroup</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="CDRLastSoftwareScanGroup">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>(All)</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Last Software Scan</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>=Code.RemoveDuplicates(Parameters!CDRLastSoftwareScanGroupDummy)</Value>
+            <Label>=Code.RemoveDuplicates(Parameters!CDRLastSoftwareScanGroupDummy)</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="CDRLastStatusMessageGroupDummy">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>CDRDataSet</DataSetName>
+          <ValueField>CDRLastStatusMessageGroup</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>CDRLastStatusMessageGroupDummy</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>CDRDataSet</DataSetName>
+          <ValueField>CDRLastStatusMessageGroup</ValueField>
+          <LabelField>CDRLastStatusMessageGroup</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="CDRLastStatusMessageGroup">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>(All)</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Last Status Message</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>=Code.RemoveDuplicates(Parameters!CDRLastStatusMessageGroupDummy)</Value>
+            <Label>=Code.RemoveDuplicates(Parameters!CDRLastStatusMessageGroupDummy)</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="CDRLastActiveTimeGroupDummy">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>CDRDataSet</DataSetName>
+          <ValueField>CDRLastActiveTimeGroup</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>CDRLastActiveTimeGroupDummy</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>CDRDataSet</DataSetName>
+          <ValueField>CDRLastActiveTimeGroup</ValueField>
+          <LabelField>CDRLastActiveTimeGroup</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="CDRLastActiveTimeGroup">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>(All)</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Last Active Time</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>=Code.RemoveDuplicates(Parameters!CDRLastActiveTimeGroupDummy)</Value>
+            <Label>=Code.RemoveDuplicates(Parameters!CDRLastActiveTimeGroupDummy)</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="CDRLastClientCheckTimeGroupDummy">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>CDRDataSet</DataSetName>
+          <ValueField>CDRLastClientCheckTimeGroup</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>CDRLastClientCheckTimeGroupDummy</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>CDRDataSet</DataSetName>
+          <ValueField>CDRLastClientCheckTimeGroup</ValueField>
+          <LabelField>CDRLastClientCheckTimeGroup</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="CDRLastClientCheckTimeGroup">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>(All)</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Last Client Health Check Time</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>=Code.RemoveDuplicates(Parameters!CDRLastClientCheckTimeGroupDummy)</Value>
+            <Label>=Code.RemoveDuplicates(Parameters!CDRLastClientCheckTimeGroupDummy)</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="CDRClientCheckPassDummy">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>CDRDataSet</DataSetName>
+          <ValueField>CDRClientCheckPass</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>CDRClientCheckPassDummy</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>CDRDataSet</DataSetName>
+          <ValueField>CDRClientCheckPass</ValueField>
+          <LabelField>CDRClientCheckPass</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="CDRClientCheckPass">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>(All)</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Last Client Health Check Result</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>=Code.RemoveDuplicates(Parameters!CDRClientCheckPassDummy)</Value>
+            <Label>=Code.RemoveDuplicates(Parameters!CDRClientCheckPassDummy)</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="CDRCNIsOnInternetDummy">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>CDRDataSet</DataSetName>
+          <ValueField>CDRCNIsOnInternet</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>CDRCNIsOnInternetDummy</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>CDRDataSet</DataSetName>
+          <ValueField>CDRCNIsOnInternet</ValueField>
+          <LabelField>CDRCNIsOnInternet</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="CDRCNIsOnInternet">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>(All)</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Is Client On Internet?</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>=Code.RemoveDuplicates(Parameters!CDRCNIsOnInternetDummy)</Value>
+            <Label>=Code.RemoveDuplicates(Parameters!CDRCNIsOnInternetDummy)</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="USSLastScanPackageLocationDummy">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>USSDataSet</DataSetName>
+          <ValueField>USSLastScanPackageLocation</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>USSLastScanPackageLocationDummy</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>USSDataSet</DataSetName>
+          <ValueField>USSLastScanPackageLocation</ValueField>
+          <LabelField>USSLastScanPackageLocation</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="USSLastScanPackageLocation">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>(All)</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Last Update Scan Location</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>=Code.RemoveDuplicates(Parameters!USSLastScanPackageLocationDummy)</Value>
+            <Label>=Code.RemoveDuplicates(Parameters!USSLastScanPackageLocationDummy)</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="USSLastScanPackageVersionDummy">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>USSDataSet</DataSetName>
+          <ValueField>USSLastScanPackageVersion</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>USSLastScanPackageVersionDummy</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>USSDataSet</DataSetName>
+          <ValueField>USSLastScanPackageVersion</ValueField>
+          <LabelField>USSLastScanPackageVersion</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="USSLastScanPackageVersion">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>(All)</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Last Attempted SUP Catalog Version</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>=Code.RemoveDuplicates(Parameters!USSLastScanPackageVersionDummy)</Value>
+            <Label>=Code.RemoveDuplicates(Parameters!USSLastScanPackageVersionDummy)</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="USSLastWUAVersionDummy">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>USSDataSet</DataSetName>
+          <ValueField>USSLastWUAVersion</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>USSLastWUAVersionDummy</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>USSDataSet</DataSetName>
+          <ValueField>USSLastWUAVersion</ValueField>
+          <LabelField>USSLastWUAVersion</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="USSLastWUAVersion">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>(All)</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Windows Update Agent Version</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>=Code.RemoveDuplicates(Parameters!USSLastWUAVersionDummy)</Value>
+            <Label>=Code.RemoveDuplicates(Parameters!USSLastWUAVersionDummy)</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="USSScanTimeGroupDummy">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>USSDataSet</DataSetName>
+          <ValueField>USSScanTimeGroup</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>USSScanTimeGroupDummy</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>USSDataSet</DataSetName>
+          <ValueField>USSScanTimeGroup</ValueField>
+          <LabelField>USSScanTimeGroup</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="USSScanTimeGroup">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>(All)</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Last Completed SUP Scan Time</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>=Code.RemoveDuplicates(Parameters!USSScanTimeGroupDummy)</Value>
+            <Label>=Code.RemoveDuplicates(Parameters!USSScanTimeGroupDummy)</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="USSLastScanTimeGroupDummy">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>USSDataSet</DataSetName>
+          <ValueField>USSLastScanTimeGroup</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>USSLastScanTimeGroupDummy</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>USSDataSet</DataSetName>
+          <ValueField>USSLastScanTimeGroup</ValueField>
+          <LabelField>USSLastScanTimeGroup</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="USSLastScanTimeGroup">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>(All)</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Last Attempted SUP Scan Time</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>=Code.RemoveDuplicates(Parameters!USSLastScanTimeGroupDummy)</Value>
+            <Label>=Code.RemoveDuplicates(Parameters!USSLastScanTimeGroupDummy)</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="USSScanPackageVersionDummy">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>USSDataSet</DataSetName>
+          <ValueField>USSScanPackageVersion</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>USSScanPackageVersionDummy</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>USSDataSet</DataSetName>
+          <ValueField>USSScanPackageVersion</ValueField>
+          <LabelField>USSScanPackageVersion</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="USSScanPackageVersion">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>(All)</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Last Completed SUP Catalog Version</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>=Code.RemoveDuplicates(Parameters!USSScanPackageVersionDummy)</Value>
+            <Label>=Code.RemoveDuplicates(Parameters!USSScanPackageVersionDummy)</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="USSLastStatusMessageIDDummy">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>USSDataSet</DataSetName>
+          <ValueField>USSLastStatusMessageID</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>USSLastStatusMessageIDDummy</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>USSDataSet</DataSetName>
+          <ValueField>USSLastStatusMessageID</ValueField>
+          <LabelField>USSLastStatusMessageID</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="USSLastStatusMessageID">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>(All)</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Last SUP Status Message ID</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>=Code.RemoveDuplicates(Parameters!USSLastStatusMessageIDDummy)</Value>
+            <Label>=Code.RemoveDuplicates(Parameters!USSLastStatusMessageIDDummy)</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="USSLastErrorCodeDummy">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>USSDataSet</DataSetName>
+          <ValueField>USSLastErrorCode</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>USSLastErrorCodeDummy</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>USSDataSet</DataSetName>
+          <ValueField>USSLastErrorCode</ValueField>
+          <LabelField>USSLastErrorCode</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="USSLastErrorCode">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>(All)</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Last SUP Error Code</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>=Code.RemoveDuplicates(Parameters!USSLastErrorCodeDummy)</Value>
+            <Label>=Code.RemoveDuplicates(Parameters!USSLastErrorCodeDummy)</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="USSLastScanStateDummy">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>USSDataSet</DataSetName>
+          <ValueField>USSLastScanState</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>USSLastScanStateDummy</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>USSDataSet</DataSetName>
+          <ValueField>USSLastScanState</ValueField>
+          <LabelField>USSLastScanState</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="USSLastScanState">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>(All)</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Last SUP Scan State</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>=Code.RemoveDuplicates(Parameters!USSLastScanStateDummy)</Value>
+            <Label>=Code.RemoveDuplicates(Parameters!USSLastScanStateDummy)</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="OSLastBootUpTimeGroupDummy">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>OSDataSet</DataSetName>
+          <ValueField>OSLastBootUpTimeGroup</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>OSLastBootUpTimeGroupDummy</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>OSDataSet</DataSetName>
+          <ValueField>OSLastBootUpTimeGroup</ValueField>
+          <LabelField>OSLastBootUpTimeGroup</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="OSLastBootUpTimeGroup">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>(All)</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Last Boot Time</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>=Code.RemoveDuplicates(Parameters!OSLastBootUpTimeGroupDummy)</Value>
+            <Label>=Code.RemoveDuplicates(Parameters!OSLastBootUpTimeGroupDummy)</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="CHEHealthCheckDescriptionDummy">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>CHEDataSet</DataSetName>
+          <ValueField>CHEHealthCheckDescription</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>CHEHealthCheckDescriptionDummy</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>CHEDataSet</DataSetName>
+          <ValueField>CHEHealthCheckDescription</ValueField>
+          <LabelField>CHEHealthCheckDescription</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="CHEHealthCheckDescription">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>(All)</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Client Health Check Description</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>=Code.RemoveDuplicates(Parameters!CHEHealthCheckDescriptionDummy)</Value>
+            <Label>=Code.RemoveDuplicates(Parameters!CHEHealthCheckDescriptionDummy)</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="LDFreeDiskGBGroup">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value>(All)</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>C: Free Disk (GB)</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>LDDataSet</DataSetName>
+          <ValueField>LDFreeDiskGBGroup</ValueField>
+          <LabelField>LDFreeDiskGBGroup</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+  </ReportParameters>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>5</NumberOfColumns>
+      <NumberOfRows>17</NumberOfRows>
+      <CellDefinitions>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>UserTokenSIDs</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>UserSIDs</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>Name</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>LastLogonUser</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>13</RowIndex>
+          <ParameterName>LDFreeDiskGBGroup</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>OSCaptionDummy</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>3</RowIndex>
+          <ParameterName>CDRClientVersion</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>OSCaption</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>3</RowIndex>
+          <ParameterName>PDHealthStatusDummy</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>2</RowIndex>
+          <ParameterName>CSManufacturerDummy</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>3</RowIndex>
+          <ParameterName>PDHealthStatus</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>2</RowIndex>
+          <ParameterName>CSManufacturer</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>2</RowIndex>
+          <ParameterName>CSModelDummy</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>3</RowIndex>
+          <ParameterName>CDRClientVersionDummy</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>2</RowIndex>
+          <ParameterName>CSModel</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>8</RowIndex>
+          <ParameterName>USSLastScanPackageLocationDummy</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>8</RowIndex>
+          <ParameterName>USSLastScanPackageVersion</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>8</RowIndex>
+          <ParameterName>USSLastScanPackageLocation</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>9</RowIndex>
+          <ParameterName>USSLastWUAVersionDummy</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>8</RowIndex>
+          <ParameterName>USSLastScanPackageVersionDummy</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>9</RowIndex>
+          <ParameterName>USSLastWUAVersion</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>9</RowIndex>
+          <ParameterName>USSScanTimeGroupDummy</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>9</RowIndex>
+          <ParameterName>USSScanTimeGroup</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>10</RowIndex>
+          <ParameterName>USSLastScanTimeGroupDummy</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>10</RowIndex>
+          <ParameterName>USSLastScanTimeGroup</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>10</RowIndex>
+          <ParameterName>USSScanPackageVersionDummy</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>10</RowIndex>
+          <ParameterName>USSScanPackageVersion</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>11</RowIndex>
+          <ParameterName>USSLastStatusMessageIDDummy</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>11</RowIndex>
+          <ParameterName>USSLastStatusMessageID</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>11</RowIndex>
+          <ParameterName>USSLastErrorCodeDummy</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>11</RowIndex>
+          <ParameterName>USSLastErrorCode</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>12</RowIndex>
+          <ParameterName>USSLastScanStateDummy</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>12</RowIndex>
+          <ParameterName>USSLastScanState</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>12</RowIndex>
+          <ParameterName>OSLastBootUpTimeGroupDummy</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>12</RowIndex>
+          <ParameterName>OSLastBootUpTimeGroup</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>4</RowIndex>
+          <ParameterName>CDRLastDDRGroupDummy</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>4</RowIndex>
+          <ParameterName>CDRLastDDRGroup</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>4</RowIndex>
+          <ParameterName>CDRLastHardwareScanGroupDummy</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>4</RowIndex>
+          <ParameterName>CDRLastHardwareScanGroup</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>5</RowIndex>
+          <ParameterName>CDRLastSoftwareScanGroupDummy</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>5</RowIndex>
+          <ParameterName>CDRLastSoftwareScanGroup</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>5</RowIndex>
+          <ParameterName>CDRLastStatusMessageGroupDummy</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>5</RowIndex>
+          <ParameterName>CDRLastStatusMessageGroup</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>6</RowIndex>
+          <ParameterName>CDRLastActiveTimeGroupDummy</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>6</RowIndex>
+          <ParameterName>CDRLastActiveTimeGroup</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>6</RowIndex>
+          <ParameterName>CDRLastClientCheckTimeGroupDummy</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>6</RowIndex>
+          <ParameterName>CDRLastClientCheckTimeGroup</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>7</RowIndex>
+          <ParameterName>CDRClientCheckPassDummy</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>7</RowIndex>
+          <ParameterName>CDRClientCheckPass</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>7</RowIndex>
+          <ParameterName>CDRCNIsOnInternetDummy</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>7</RowIndex>
+          <ParameterName>CDRCNIsOnInternet</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>13</RowIndex>
+          <ParameterName>CHEHealthCheckDescriptionDummy</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>13</RowIndex>
+          <ParameterName>CHEHealthCheckDescription</ParameterName>
+        </CellDefinition>
+      </CellDefinitions>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
+  <Code>Public Shared Function RemoveDuplicates(parameter As Parameter) As String()  
+              
+      Dim items As Object() = parameter.Value  
+      System.Array.Sort(items)  
+      Dim k As Integer = 0  
+              
+      For i As Integer = 0 To items.Length - 1  
+      If i &gt; 0 AndAlso items(i).Equals(items(i - 1)) Then  
+      Continue For  
+      End If  
+              
+      items(k) = items(i)  
+      k += 1  
+      Next  
+      Dim unique As [String]() = New [String](k - 1) {}  
+      System.Array.Copy(items, 0, unique, 0, k)  
+              
+      Return unique  
+      End Function
+
+
+Public Shared Function RemoveDuplicatesDate(parameter As Parameter) As DateTime()  
+              
+      Dim items As Object() = parameter.Value  
+      System.Array.Sort(items)  
+      Dim k As Integer = 0  
+              
+      For i As Integer = 0 To items.Length - 1  
+      If i &gt; 0 AndAlso items(i).Equals(items(i - 1)) Then  
+      Continue For  
+      End If  
+              
+      items(k) = items(i)  
+      k += 1  
+      Next  
+      Dim unique As [DateTime]() = New [DateTime](k - 1) {}  
+      System.Array.Copy(items, 0, unique, 0, k)  
+              
+      Return unique  
+      End Function
+</Code>
+  <CodeModules>
+    <CodeModule>SrsResources, culture=neutral</CodeModule>
+  </CodeModules>
+</Report>
